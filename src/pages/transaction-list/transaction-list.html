@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Transaction List</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor= "let transaction of transactions">
+      
+      <ion-label>     
+          <h3>{{ transaction.merchant }}</h3>
+          <h3 id = 'makered'> {{ transaction.points }} Points</h3>
+          <p>{{ transaction.date }} </p>
+      </ion-label> 
+   
+      <ion-label item-right text-right>
+        <h3>$ {{ transaction.amount }}</h3>
+      </ion-label>
+
+    </ion-item>
+
+  </ion-list>
+</ion-content>
+
