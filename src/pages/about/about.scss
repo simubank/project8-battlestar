@@ -10,20 +10,25 @@ page-about {
   
     .card-title {
       position: absolute;
-      top: 36%;
-      font-size: 2.0em;
+      top: 5%;
+      right: 5%;
+      font-size: 2.3em;
       width: 100%;
       font-weight: bold;
-      color: #fff;
+      color: green;
+      text-align: right;
     }
   
     .card-subtitle {
-      font-size: 1.2em;
+      font-size: 1.0em;
       position: absolute;
-      top: 52%;
+      top: 25%;
+      right: 5%;
       width: 100%;
       font-weight: italic;
-      color: #fff;
+      color: black;
+      text-align: right;
+
     }
   
   }

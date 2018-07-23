@@ -1,0 +1,24 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ pageTitle }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+  <form [formGroup]="form" *ngIf="settingsReady">
+    <ion-list *ngIf="page == 'main'">
+      <ion-item>
+        <ion-label>{{ 'SETTINGS_OPTION1' | translate }}</ion-label>
+        <ion-select formControlName="option1">
+          <ion-option value="1" checked="true">1 km</ion-option>
+          <ion-option value="2">2 km</ion-option>
+          <ion-option value="5">5 km</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+  </form>
+
+</ion-content>
