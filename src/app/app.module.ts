@@ -10,7 +10,10 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { TransactionProvider } from '../providers/transaction/transaction';
 import { Settings } from '../providers/settings/settings';
+import { GoogleMaps } from '@ionic-native/google-maps';
+import { Geolocation } from '@ionic-native/geolocation';
 
+import { ShareService } from '../providers/share/share';
 
 import { TransactionListPage } from './../pages/transaction-list/transaction-list';
 import { AboutPage } from './../pages/about/about';
@@ -75,6 +78,9 @@ export function provideSettings(storage: Storage) {
     StatusBar,
     SplashScreen,
     TransactionProvider,
+    GoogleMaps,
+    Geolocation,
+    ShareService,
     { provide: Settings, useFactory: provideSettings, deps: [Storage] },
     { provide: ErrorHandler, useClass: IonicErrorHandler},
     

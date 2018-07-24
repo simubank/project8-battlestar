@@ -10,10 +10,9 @@ import { TransactionListPage } from '../transaction-list/transaction-list';
 })
 export class TabsPage {
 
-  tab1Root = AboutPage;
-  tab2Root = HomePage;
-  tab3Root = TransactionListPage;
-  tab4Root = SettingsPage;
+  tab1Root = HomePage;
+  tab2Root = TransactionListPage;
+  tab3Root = AboutPage;
 
   constructor() {
 
