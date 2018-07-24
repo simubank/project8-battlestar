@@ -18,16 +18,17 @@ export class TransactionListPage {
 	transactions: any;
 	otherstuff: any;
 	creditAccountId: any;
+	sharedServiceInstance: any;
 	
-	constructor(shareService: ShareService, public transactionProvider: TransactionProvider, public navCtrl: NavController, public platform: Platform) {
+	constructor(private shareService: ShareService, public transactionProvider: TransactionProvider, public navCtrl: NavController, public platform: Platform) {
 		this.getCreditAccountID(this.userAccountId)
 			.then(() => {
 				this.getTransactions(this.creditAccountId.ID);
 
 			});
-		platform.ready().then(() => {
-			shareService.setPoints(666);
-		});
+		// platform.ready().then(() => {
+		// 	this.shareService.setPoints(0);
+		// });
 
 	};
 
@@ -50,13 +51,16 @@ export class TransactionListPage {
 
 			this.transactions = data;
 			this.transactions = this.transactions.result.map(trx => {
-
+				let trxPoints = Math.round(trx.currencyAmount * 2);
+				let tmpPts = this.shareService.getPoints();
+				tmpPts += trxPoints;
+				this.shareService.setPoints(tmpPts);
 				return {
 					merchant: trx.description,
 					date: trx.postDate,
 					amount: (trx.currencyAmount).toFixed(2),
 					category: trx.categoryTags[0],
-					points: Math.round(trx.currencyAmount * 2),
+					points: trxPoints,
 				};
 			});
 

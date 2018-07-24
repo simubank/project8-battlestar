@@ -3,7 +3,7 @@
     <name>levelup-ionic-starter</name>
     <description>An awesome Ionic/Cordova app.</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
-    <content original-src="index.html" src="http://192.168.2.13:8100" />
+    <content original-src="index.html" src="http://172.20.10.7:8100" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -92,6 +92,11 @@
     <plugin name="cordova-plugin-geolocation" spec="^4.0.1">
         <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="To locate you" />
     </plugin>
+    <allow-navigation href="http://192.55.233.2:8100" />
+    <allow-navigation href="http://172.17.166.154:8100" />
+    <allow-navigation href="http://192.168.100.215:8100" />
+    <allow-navigation href="http://10.0.9.247:8100" />
+    <allow-navigation href="http://172.20.10.7:8100" />
     <engine name="android" spec="7.1.1" />
     <engine name="ios" spec="4.5.4" />
 </widget>

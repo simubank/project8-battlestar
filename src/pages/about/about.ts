@@ -8,11 +8,12 @@ import { ShareService } from '../../providers/share/share';
 })
 export class AboutPage {
   runningTot = 3;
-  constructor(shareService: ShareService, platform: Platform) {
-    platform.ready().then(() => {
-      console.log(this.runningTot);
-      this.runningTot = shareService.getPoints();
-    });
+  constructor(private shareService: ShareService, platform: Platform) {
+    if (this.shareService.getPoints() === 2) {
+      this.shareService.setPoints(838);
+    };
+    console.log(this.shareService.getPoints());
+      this.runningTot = this.shareService.getPoints();
 
   };
 
